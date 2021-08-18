@@ -6,7 +6,7 @@
 #    By: tsekiguc <tsekiguc@student.42tokyo.jp      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 09:45:12 by tsekiguc          #+#    #+#              #
-#    Updated: 2021/08/12 23:02:47 by tsekiguc         ###   ########.fr        #
+#    Updated: 2021/08/18 11:10:07 by tsekiguc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,14 @@ BONUS = lstadd_back_test.c lstadd_front_test.c lstclear_test.c lstdelone_test.c\
 		lstiter_test.c lstlast_test.c lstmap_test.c lstnew_test.c lstsize_test.c
 
 $(NAME):
+	cp ../libft.h
+	cp ../libft.a
 	$(CC) $(CFLAGS) $(SRCS) libft.a
 
 bonus:
+	cp ../libft.h
+	cp ../libft.a
 	$(CC) $(CFLAGS) $(SRCS) $(BONUS) libft.a -D BONUS=1
+
+clean:
+	rm a.out
