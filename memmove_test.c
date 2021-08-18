@@ -6,7 +6,7 @@
 /*   By: tsekiguc <tsekiguc@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 15:14:32 by tsekiguc          #+#    #+#             */
-/*   Updated: 2021/08/18 13:27:22 by tsekiguc         ###   ########.fr       */
+/*   Updated: 2021/08/18 13:30:27 by tsekiguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char do_test_null(void)
 {
 	char	*ret;
 
-	ret = ft_memmove(null, null, 1);
+	ret = ft_memmove(NULL, NULL, 1);
 	if (ret == NULL)
 		return ('o');
 	else
