@@ -6,7 +6,7 @@
 /*   By: tsekiguc <tsekiguc@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 15:14:32 by tsekiguc          #+#    #+#             */
-/*   Updated: 2021/07/28 15:56:09 by tsekiguc         ###   ########.fr       */
+/*   Updated: 2021/08/18 13:27:22 by tsekiguc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,29 @@ static char	do_test_overrap(const void *src, size_t n, int start, const void *ex
 		return ('x');
 }
 
+static char do_test_same(void)
+{
+	char	str[] = "same";
+	char	*ret;
+
+	ret = ft_memmove(str, str, 1);
+	if (ret == str)
+		return ('o');
+	else
+		return ('x');
+}
+
+static char do_test_null(void)
+{
+	char	*ret;
+
+	ret = ft_memmove(null, null, 1);
+	if (ret == NULL)
+		return ('o');
+	else
+		return ('x');
+}
+
 char	*memmove_test(void)
 {
 	char	*result;
@@ -58,7 +81,7 @@ char	*memmove_test(void)
 	int		num;
 	int		array[] = {33, 42, 100, 9999, 1031, -339382, 222222222};
 
-	result = (char *)malloc(sizeof(char) * 12);
+	result = (char *)malloc(sizeof(char) * 14);
 	str = strdup("The Catcher in the Rye");
 	result[0] = do_test(str, strlen(str) + 1);
 	free(str);
@@ -89,7 +112,10 @@ char	*memmove_test(void)
 	str = strdup("01234567890123456789");
 	result[10] = do_test_overrap(str, 7, 5, "01234012345623456789");
 	free(str);
+	
+	result[11] = do_test_same();
+	result[12] = do_test_null();
 
-	result[11] = '\0';
+	result[13] = '\0';
 	return (result);
 }
